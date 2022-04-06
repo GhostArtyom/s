@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平安成电智慧通行</title>
+</head>
+
+<body>
+    <div class="auth">
+        <text class="auth_text">本科用户，入校授权有效！</text>
+    </div>
+
+    <hr align="center" color="#E0E3DA" size="1">
+
+    <div class="tr">
+        <div class="td-left">
+            <img alt="user" class="icon" src="./Pictures/user.png">
+        </div>
+        <div class="td-mid">
+            <div class="left">用户姓名</div>
+        </div>
+        <div class="td-right">
+            <div class="right">刘慈欣</div>
+        </div>
+    </div>
+
+    <div class="tr">
+        <div class="td-left">
+            <img alt="register" class="icon" src="./Pictures/register.png">
+        </div>
+        <div class="td-mid">
+            <div class="left">登记类型</div>
+        </div>
+        <div class="td-right">
+            <div class="right">本科生</div>
+        </div>
+    </div>
+
+    <div class="tr">
+        <div class="td-left">
+            <img alt="time" class="icon" src="./Pictures/time.png">
+        </div>
+        <div class="td-mid">
+            <div class="left">登记时间</div>
+        </div>
+        <div class="td-right">
+            <marquee width="200" scrollamount="3">
+                <div id="time" class="time" behavior="scroll"></div>
+            </marquee>
+        </div>
+    </div>
+
+    <div class="tr">
+        <div class="qrcode">
+            <p>前往个人二维码</p>
+        </div>
+    </div>
+
+    <div class="tr">
+        <img alt="logo" class="logo" src="./Pictures/logo.png">
+    </div>
+
+    <style>
+        .auth {
+            margin-top: 60px;
+            margin-left: 10px;
+            margin-bottom: 40px;
+        }
+
+        .auth_text {
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .icon {
+            width: 28px;
+            height: 28px;
+            margin-left: 10px;
+        }
+
+        .left {
+            color: #000000;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .right {
+            color: #000000;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .time {
+            color: #00C4A4;
+            font-size: 1.17em;
+            font-weight: bold;
+        }
+
+        .tr {
+            display: flex;
+            width: 100%;
+            height: 3rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .td-left {
+            width: 5%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .td-mid {
+            width: 33%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .td-right {
+            width: 62%;
+            text-align: right;
+            justify-content: center;
+        }
+
+        .qrcode {
+            color: #FFFFFF;
+            background-color: #00C4A4;
+            border-radius: 2px;
+            border-style: none;
+            line-height: 0;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 4px 16px;
+            margin-top: 15px;
+            will-change: box-shadow;
+            box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+        }
+
+        .logo{
+            width: 50px;
+            height: 50px;
+            margin-top: 70px;
+        }
+    </style>
+</body>
+<script type="text/javascript">
+    function getTime() {
+        var myDate = new Date();
+        var myYear = myDate.getFullYear();
+        var myMonth = addZero(myDate.getMonth() + 1);
+        var myDay = addZero(myDate.getDate());
+        var myHours = addZero(myDate.getHours());
+        var myMinutes = addZero(myDate.getMinutes());
+        var mySeconds = addZero(myDate.getSeconds());
+        var time = document.getElementById("time");
+        for (i = 0; i < 5; i++) {
+            time.innerHTML += myYear + "-" + myMonth + "-" + myDay + " " + myHours + ":" + myMinutes + ":" + mySeconds + "&ensp;";
+        }
+    }
+    function addZero(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+    getTime();
+</script>
+
+</html>
