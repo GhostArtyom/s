@@ -83,12 +83,14 @@
 
         .left {
             color: #000000;
+            font-family: Roboto;
             font-size: 16px;
             font-weight: 400;
         }
 
         .right {
             color: #000000;
+            font-family: Roboto;
             font-size: 1.5em;
             font-weight: bold;
             margin-right: 10px;
@@ -96,6 +98,7 @@
 
         .time {
             color: #00C4A4;
+            font-family: Roboto;
             font-size: 1.17em;
             font-weight: bold;
         }
@@ -157,7 +160,7 @@
         var myMinutes = addZero(myDate.getMinutes());
         var mySeconds = addZero(myDate.getSeconds());
         var time = document.getElementById("time");
-        for (i = 0; i < 5; i++) {
+        for (i = 0; i < 10; i++) {
             time.innerHTML += myYear + "-" + myMonth + "-" + myDay + " " + myHours + ":" + myMinutes + ":" + mySeconds + "&ensp;";
         }
     }
